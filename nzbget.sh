@@ -36,11 +36,6 @@ rm ~/nzbget-latest-bin-linux.run
 sed -i "/DaemonUsername=/c\DaemonUsername=$InstallUser" ${InstallPath}/nzbget.conf
 #sed -i "/UMask=/c\UMask=0022" ${InstallPath}/nzbget.conf #0002
 
-# enable https (ssl) access over port 6791
-sed -i "/SecureCert=/c\SecureCert=/etc/apache2/ssl/apache.crt" ${InstallPath}/nzbget.conf
-sed -i "/SecureKey=/c\SecureKey=/etc/apache2/ssl/apache.key" ${InstallPath}/nzbget.conf
-sed -i "/SecureControl=/c\SecureControl=yes" ${InstallPath}/nzbget.conf
-
 # set authorized IPs
 # caution with 127.0.0.1 or localhost in combination with Apache2 proxy
 sed -i "/AutorizedIP=/c\AutorizedIP=" ${InstallPath}/nzbget.conf
